@@ -3,8 +3,8 @@ import colors from 'vuetify/es5/util/colors'
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    titleTemplate: '%s - portfolio-frontend',
-    title: 'portfolio-frontend',
+    titleTemplate: '%s - Portfolio',
+    title: 'Maxime Leclerc',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -30,6 +30,8 @@ export default {
     '@nuxtjs/stylelint-module',
     // https://go.nuxtjs.dev/vuetify
     '@nuxtjs/vuetify',
+    // https://composition-api.nuxtjs.org/
+    '@nuxtjs/composition-api/module'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -38,7 +40,33 @@ export default {
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
+    // https://i18n.nuxtjs.org/setup
+    'nuxt-i18n',
   ],
+
+  // https://i18n.nuxtjs.org/setup
+  i18n: {
+    strategy: 'prefix_except_default',
+    lazy: true,
+    langDir: '~/locales/',
+    defaultLocale: 'fr',
+    locales: [
+      {
+        name: 'English',
+        flagPath: '/img/flag/en-GB.svg',
+        code: 'en',
+        iso: 'en-US',
+        file: 'en.js',
+      },
+      {
+        name: 'Français',
+        flagPath: '/img/flag/fr-FR.svg',
+        code: 'fr',
+        iso: 'fr-FR',
+        file: 'fr.js',
+      },
+    ],
+  },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {},
@@ -46,7 +74,7 @@ export default {
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
     manifest: {
-      lang: 'en',
+      lang: 'fr',
     },
   },
 
@@ -54,9 +82,9 @@ export default {
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
     theme: {
-      dark: true,
+      light: true,
       themes: {
-        dark: {
+        light: {
           primary: colors.blue.darken2,
           accent: colors.grey.darken3,
           secondary: colors.amber.darken3,
