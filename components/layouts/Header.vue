@@ -1,12 +1,12 @@
 <template>
-  <v-toolbar color="primary">
+  <v-toolbar height="60" color="primary">
     <v-toolbar-title></v-toolbar-title>
     <v-spacer></v-spacer>
     <v-toolbar-items class="hidden-sm-and-down">
       <v-btn
         class="white--text"
-        v-for="(item, index) in navigationItems"
-        :key="index"
+        v-for="item in navigationItems"
+        :key="item.code"
         :to="item.link"
         text
       >
@@ -19,7 +19,7 @@
         <v-app-bar-nav-icon v-bind="attrs" v-on="on"></v-app-bar-nav-icon>
       </template>
       <v-list>
-        <v-list-item v-for="(item, index) in navigationItems" :key="index">
+        <v-list-item v-for="item in navigationItems" :key="item.code">
           <v-list-item-title>{{ $t(item.nameI18n) }}</v-list-item-title>
         </v-list-item>
       </v-list>
@@ -37,11 +37,11 @@ export default defineComponent({
   },
   setup() {
     const navigationItems = ref([
-      { nameI18n: 'common.header.about' },
-      { nameI18n: 'common.header.experience' },
-      { nameI18n: 'common.header.skills' },
-      { nameI18n: 'common.header.blog' },
-      { nameI18n: 'common.header.contact' },
+      { code: 'about', nameI18n: 'common.header.about' },
+      { code: 'experience', nameI18n: 'common.header.experience' },
+      { code: 'skills', nameI18n: 'common.header.skills' },
+      { code: 'blog', nameI18n: 'common.header.blog' },
+      { code: 'contact', nameI18n: 'common.header.contact' },
     ])
 
     return {
