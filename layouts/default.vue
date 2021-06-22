@@ -1,11 +1,13 @@
 <template>
-    <v-app>
-      <Header />
-      <v-main>
+  <v-app>
+    <Header />
+    <v-main>
+      <v-container fluid>
         <Nuxt />
-      </v-main>
-      <Footer />
-    </v-app>
+      </v-container>
+    </v-main>
+    <Footer />
+  </v-app>
 </template>
 
 <script>

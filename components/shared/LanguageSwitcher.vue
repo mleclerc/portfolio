@@ -8,7 +8,7 @@
           v-on="on"
           icon
         >
-          <img class="pa-2" :src="locale.flagPath" />
+          <img width="30" :src="locale.flagPath" />
         </v-btn>
       </template>
       <span>{{ locale.name }}</span>
